@@ -1,13 +1,13 @@
 (* top *) module delay_extclk (
-  (* iopad_external_pin, clkbuf_inhibit *) input lac0_clk,
-  (* iopad_external_pin, clkbuf_inhibit *) input lac1_clk,
-  (* iopad_external_pin *) input nreset,
+  (* iopad_external_pin, clkbuf_inhibit *) input lac0_clk, //LOGIC_AS_CLK0
+  (* iopad_external_pin, clkbuf_inhibit *) input lac1_clk, //LOGIC_AS_CLK1
+  (* iopad_external_pin *) input nreset, //FPGA_CORE_READY
   (* iopad_external_pin *) input ext_clk_in,
   (* iopad_external_pin *) input event_in,
-  (* iopad_external_pin *) output ref_lac0_out,
-  (* iopad_external_pin *) output ref_lac1_out,
-  (* iopad_external_pin *) output lac0_en,
-  (* iopad_external_pin *) output lac1_en,
+  (* iopad_external_pin *) output ref_lac0_out, //REF_LOGIC_AS_CLK0
+  (* iopad_external_pin *) output ref_lac1_out, //REF_LOGIC_AS_CLK1
+  (* iopad_external_pin *) output lac0_en, //LOGIC_AS_CLK0_EN
+  (* iopad_external_pin *) output lac1_en, //LOGIC_AS_CLK1_EN
   (* iopad_external_pin *) output div16_out,
   (* iopad_external_pin *) output div16_out_oe,
   (* iopad_external_pin *) output [7:0] count_out,
